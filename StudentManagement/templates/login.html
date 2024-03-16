@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 align="center" style="color:green">Welcome to Administration Page</h3>
+<h3 align="center">{{ msg }}</h3>
+<form action="" method="post" >
+    {% csrf_token %}
+    <table align="center" style="background-color:pink">
+
+        <tr>
+            <td>Username</td>
+            <td><input type="text" name="txtusername"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="txtpassword"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="" value="LOGIN" colspan="2"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><a href="{% url 'reg' %}"  colspan="5">Create a Account</a></td>
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>

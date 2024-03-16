@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h3 style="color:red" align="center">Create Your Adminn Username Here</h3>
+</head>
+<body>
+<form action="register"  method="post">
+    {% csrf_token %}
+    <h3 align="center">{{ msg }}</h3>
+    <table align="center">
+        <tr>
+            <td>Username</td>
+            <td><input type="text" name="txtusername" height="1"></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="txtpassword"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="btnreg" value="Register"></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

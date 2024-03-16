@@ -1,0 +1,65 @@
+{% extends 'adminnavbar.html' %}
+
+{% block duplicate %}
+<html lang="en">
+<head>
+    <h3 align="center">Add Student Data</h3>
+    <h3>{{ msg1 }}</h3>
+</head>
+<body>
+<form action="add_student" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>Student Name</td>
+            <td><input type="text" name="txtstudname"></td>
+        </tr>
+        <tr>
+            <td>Student Ph No</td>
+            <td><input type="number" name="phno"></td>
+        </tr>
+        <tr>
+            <td>Student Email</td>
+            <td><input type="email" name="studemail"></td>
+        </tr>
+        <tr>
+            <td >Student city</td>
+            <td>
+                <select name="studcity" >
+                    <option >------Select City------</option>
+                    {% for i in city %}
+                    <option >{{ i.city_name }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Course</td>
+            <td>
+                <select name="txtsudcourse">
+                    <option >------Select Course------</option>
+                    {% for i in course %}
+                    <option > {{ i.course_name }}</option>
+                    {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Course Fees</td>
+
+            <td><input type="number" name="txtfees" value="{{ i.course_fees }}"></td>
+
+        </tr>
+        <tr>
+            <td>Paid Fees</td>
+            <td><input type="number" name="txtpaidfees"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="btnsub" value="Submit"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
+
+{% endblock %}

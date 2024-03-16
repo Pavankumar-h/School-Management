@@ -1,0 +1,48 @@
+{% extends 'adminnavbar.html' %}
+
+{% block duplicate %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <h2 align="center"> Student Details</h2>
+</head>
+<body>
+<form  action="dispaly_stud" method="post">
+  <table align="center" border="2" colspan="2">
+    <tr>
+      <th>Name</th>
+      <th>PH no</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>Course</th>
+      <th>Total Fees</th>
+      <th>Paid fees</th>
+      <th>Pending Fees</th>
+      <th>Update</th>
+      <th>Delete</th>
+    </tr>
+    <tr>
+      {% for i in data1 %}
+      <tr>
+      <td>{{ i.Student_name }}</td>
+      <td>{{ i.Student_ph }}</td>
+      <td>{{ i.student_email }}</td>
+      <td>{{ i.City.city_name }}</td>
+      <td>{{ i.Student_course}}</td>
+      <td>{{ i.course_fees }}</td>
+      <td>{{ i.paid_fees }}</td>
+      <td>{{ i.pending_fees }}</td>
+      <td><a href="{% url 'update_stud' i.id %}">update</a> </td>
+      <td><a href="{% url 'delete_stud' i.id %}">delete</a>  </td>
+      </tr>
+
+      {% endfor %}
+
+    </tr>
+  </table>
+</form>
+
+</body>
+</html>
+
+{% endblock %}
